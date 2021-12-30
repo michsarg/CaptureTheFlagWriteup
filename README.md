@@ -10,7 +10,11 @@ The final project for UWA unit CITS3004 Cybersecurity involved 22 capture the fl
 A website build with the Flask framework features of an email sign up page with a vulnerability.
 
 #### Process
-In researching Jinja vulnerabilities, a suggestion was found to use a *Server Side Template Injection*. I found helpful guide at https://medium.com/@nyomanpradipta120/ssti-in-flask-jinja2-20b068fdaeee. Burpsuite Repeater was used for this task due to the ease of repeating requests with simple alterations. Using this, I began by using the input *{{config}}@gmail.com* to the *email* field which dumped details of the config object, which interestingly contains executable functions. Then I was able edit the payload to traverse up the hierachy to find *subprocess.Popen* was accessible. This enabled me to submit terminal commands via the payload and find the flag. The final input was: 
+In researching Jinja vulnerabilities, a suggestion was found to use a *Server Side Template Injection*. I found helpful guide at https://medium.com/@nyomanpradipta120/ssti-in-flask-jinja2-20b068fdaeee. Burpsuite Repeater was used for this task due to the ease of repeating requests with simple alterations. 
+
+I began by using the input *{{config}}@gmail.com* to the *email* field which dumped details of the config object, which interestingly contains executable functions. Then I was able edit the payload to traverse up the hierachy to find *subprocess.Popen* was accessible. This enabled me to submit terminal commands via the payload and find the flag. 
+
+The final input was: 
 *email={{"".__class__.__mro__[1].__subclasses__()[279]('cat flag',shell=True,stdout=-1).communicate()}}@gmail.com*
 
 #### Flag
