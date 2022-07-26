@@ -1,4 +1,5 @@
-## 3004 CTF Project: Select Write Ups
+## 3004 Cybersecurity Project
+## Capture The Flag: Select Write Ups
 
 The final project for UWA unit CITS3004 Cybersecurity involved 22 capture the flag challenges. I completed all challenges and received full marks but have only included the most unique and interesting challenges here. The full set of CTF challenges is available at https://github.com/Ccamm/CITS3004-Project
 
